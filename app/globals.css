@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+  --color-accent: #10b981;
+  --color-dark: #0f172a;
+  --color-dark-deep: #1e1b4b;
+}
+
+:root {
+  --bg-gradient: linear-gradient(to bottom right, #0f172a, #1e1b4b);
+}
+
+body {
+  background: var(--bg-gradient);
+  color: white;
+  overflow-x: hidden;
+}
+
+.gsap-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
+}
+
+.custom-cursor.hover {
+  transform: scale(4);
+}
+
+/* Smooth scroll container */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Split text line container */
+.line-container {
+  overflow: hidden;
+}
+
+.line-inner {
+  display: block;
+}
