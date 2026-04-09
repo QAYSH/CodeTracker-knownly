@@ -4,7 +4,7 @@ import { useRef, useEffect, ReactElement, cloneElement } from 'react';
 import gsap from 'gsap';
 
 export default function Magnetic({ children }: { children: ReactElement }) {
-  const magneticRef = useRef<HTMLElement>(null);
+  const magneticRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = magneticRef.current;

@@ -54,7 +54,7 @@ export default function WaitlistForm() {
           <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter">
             Join the <span className="text-primary">Waitlist</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto font-medium text-lg">
+          <p className="text-gray-500 max-w-xl mx-auto font-medium text-lg">
             Be the first to know when we launch and get exclusive early-bird perks.
           </p>
 
@@ -64,7 +64,7 @@ export default function WaitlistForm() {
                 <CheckCircle2 className="w-10 h-10 text-accent" />
               </div>
               <h3 className="text-2xl font-bold">You&apos;re on the list!</h3>
-              <p className="text-gray-400">We&apos;ll reach out to you soon at {email}.</p>
+              <p className="text-gray-500">We&apos;ll reach out to you soon at {email}.</p>
               <button 
                 onClick={() => {setStatus('idle'); setEmail('');}}
                 className="text-primary font-bold hover:underline mt-4"
@@ -81,7 +81,7 @@ export default function WaitlistForm() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-medium"
+                  className="w-full px-6 py-4 bg-current/5 border border-current/10 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-medium"
                 />
                 <div className="absolute inset-0 rounded-2xl border border-primary opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
               </div>

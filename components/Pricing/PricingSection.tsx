@@ -62,7 +62,7 @@ export default function PricingSection() {
           <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter">
             Simple <span className="text-primary">Pricing</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto font-medium">
+          <p className="text-gray-500 max-w-xl mx-auto font-medium">
             Choose the plan that fits your coding journey. No hidden fees.
           </p>
         </div>
@@ -153,10 +153,10 @@ function PricingCard({ plan }: { plan: typeof plans[0] }) {
       <div className="mb-8" style={{ transform: 'translateZ(50px)' }}>
         <h3 className="text-2xl font-display font-bold mb-2">{plan.name}</h3>
         <div className="flex items-baseline gap-1">
-          <span className="text-5xl font-display font-black">${price}</span>
+          <span className="text-5xl font-display font-black text-current">${price}</span>
           <span className="text-gray-500 font-bold">/month</span>
         </div>
-        <p className="text-gray-400 mt-4 font-medium">{plan.description}</p>
+        <p className="text-gray-500 mt-4 font-medium">{plan.description}</p>
       </div>
 
       <div className="space-y-4 mb-12 flex-grow" style={{ transform: 'translateZ(30px)' }}>
@@ -165,7 +165,7 @@ function PricingCard({ plan }: { plan: typeof plans[0] }) {
             <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
               <Check className="w-3 h-3 text-primary" />
             </div>
-            <span className="text-sm font-medium text-gray-300">{feature}</span>
+            <span className="text-sm font-medium text-gray-500">{feature}</span>
           </div>
         ))}
       </div>

@@ -67,7 +67,7 @@ export default function FeaturesGrid() {
             Supercharge Your <br />
             <span className="text-primary">Workflow</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto font-medium">
+          <p className="text-gray-500 max-w-xl mx-auto font-medium">
             Everything you need to master your time and become a more efficient developer.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function FeaturesGrid() {
                 <feature.icon className={`w-8 h-8 ${feature.color}`} />
               </div>
               <h3 className="text-2xl font-display font-bold mb-4">{feature.title}</h3>
-              <p className="text-gray-400 leading-relaxed font-medium">
+              <p className="text-gray-500 leading-relaxed font-medium">
                 {feature.description}
               </p>
               

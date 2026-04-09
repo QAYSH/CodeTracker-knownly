@@ -2,10 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Code2, Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/components/ui/ThemeProvider';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -70,11 +72,11 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 flex items-center justify-between"
+      className="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-6 px-6 md:px-12 flex items-center justify-between"
     >
       <div className="nav-item flex items-center gap-2 font-display text-2xl font-bold tracking-tighter">
         <Code2 className="w-8 h-8 text-primary" />
-        <span>CodeTrack</span>
+        <span className="text-current">CodeTrack</span>
       </div>
 
       <div className="hidden md:flex items-center gap-8">
@@ -82,30 +84,49 @@ export default function Navbar() {
           <a
             key={link.name}
             href={link.href}
-            className="nav-item text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            className="nav-item text-sm font-medium text-gray-400 hover:text-primary transition-colors"
           >
             {link.name}
           </a>
         ))}
-        <button className="nav-item px-6 py-2 bg-primary hover:bg-secondary rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95">
+        
+        <button
+          onClick={toggleTheme}
+          className="nav-item p-2 rounded-full glass hover:bg-white/10 transition-all"
+          aria-label="Toggle Theme"
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
+
+        <button className="nav-item px-6 py-2 bg-primary hover:bg-secondary rounded-full text-sm font-bold text-white transition-all hover:scale-105 active:scale-95">
           Get Started
         </button>
       </div>
 
-      <button
-        className="nav-item md:hidden text-white"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <X /> : <Menu />}
-      </button>
+      <div className="flex items-center gap-4 md:hidden">
+        <button
+          onClick={toggleTheme}
+          className="nav-item p-2 rounded-full glass hover:bg-white/10 transition-all"
+          aria-label="Toggle Theme"
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
+        <button
+          className="nav-item text-current"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X /> : <Menu />}
+        </button>
+      </div>
 
       {/* Mobile Menu */}
       <div
         ref={menuRef}
-        className="fixed top-0 right-0 h-screen w-full md:w-80 bg-dark-deep z-50 p-12 flex flex-col gap-8 translate-x-full shadow-2xl border-l border-white/10"
+        className="fixed top-0 right-0 h-screen w-full md:w-80 z-50 p-12 flex flex-col gap-8 translate-x-full shadow-2xl border-l border-white/10"
+        style={{ backgroundColor: 'var(--mobile-menu-bg)' }}
       >
         <button
-          className="absolute top-6 right-6 text-white"
+          className="absolute top-6 right-6 text-current"
           onClick={() => setIsOpen(false)}
         >
           <X className="w-8 h-8" />

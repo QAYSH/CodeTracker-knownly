@@ -17,11 +17,15 @@ export const metadata: Metadata = {
   description: 'The ultimate coding productivity tracker for interns and developers.',
 };
 
+import { ThemeProvider } from '@/components/ui/ThemeProvider';
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body suppressHydrationWarning className="font-sans antialiased">
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

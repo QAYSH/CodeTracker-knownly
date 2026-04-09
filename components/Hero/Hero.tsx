@@ -136,7 +136,7 @@ export default function Hero() {
           </h1>
 
           <p 
-            className="hero-reveal text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-medium"
+            className="hero-reveal text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-medium"
             style={{ transform: 'translateZ(30px)' }}
           >
             The ultimate productivity companion for developers. Automate your time tracking, 
@@ -164,7 +164,7 @@ export default function Hero() {
               key={stat.label}
               className="stat-card glass p-8 rounded-3xl text-center space-y-2 border border-white/5"
             >
-              <div className="text-4xl font-display font-black text-white">
+              <div className="text-4xl font-display font-black text-current">
                 {stat.value}
               </div>
               <div className="text-sm font-bold text-gray-500 uppercase tracking-widest">
